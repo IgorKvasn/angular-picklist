@@ -6,10 +6,11 @@ function ListEntry(originalIndex, data) {
   this.data = data;
 }
 
-angular.module('spicklist', [])
+angular.module('apicklist', [])
   .factory('_', function () {
     return window._; // assumes underscore has already been loaded on the page
   })
+
   .directive('picklist', ['_', function (_) {
     return {
       restrict: 'E',

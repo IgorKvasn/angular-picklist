@@ -88,7 +88,7 @@ module.exports = function (grunt) {
 
     ngtemplates: {  // grunt-angular-templates
       all: {
-        src: '<%= dirs.tmpl %>/**.tmpl',
+        src: '<%= dirs.tmpl %>/**.html',
         dest: '<%= dirs.tmpl %>/cache.js',
         options: {
           htmlmin: {
@@ -101,7 +101,7 @@ module.exports = function (grunt) {
             removeScriptTypeAttributes: true,
             removeStyleLinkTypeAttributes: true
           },
-          module: 'spicklist.html',
+          module: 'template/picklist.html',
           standalone: true
         }
       }
@@ -138,12 +138,6 @@ module.exports = function (grunt) {
   // Grunt tasks.
   //
 
-  // Default task.
-  grunt.registerTask('default', [
-    'clean',
-    'build',
-    'run'
-  ]);
 
   // Test task.
   grunt.registerTask('test', [
@@ -152,6 +146,7 @@ module.exports = function (grunt) {
 
   // Build task.
   grunt.registerTask('build', [
+      'ngtemplates',
     'concat',
     'ngmin',
     'uglify',

@@ -1,7 +1,7 @@
 /* globals angular */
 'use strict';
 
-var app = angular.module('ngApp', ['spicklist']);
+var app = angular.module('ngApp', ['apicklist']);
 
 app.controller('demoController', function ($scope) {
 
