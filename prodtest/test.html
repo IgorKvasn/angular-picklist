@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="ngApp" ng-cloak> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Directive Demo Page</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.rawgit.com/IgorKvasn/angular-picklist/master/dist/angular-picklist.min.css" rel="stylesheet">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.27/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.legacy.min.js"></script>
+    <script src="https://cdn.rawgit.com/IgorKvasn/angular-picklist/master/dist/angular-picklist.min.js"></script>
+
+</head>
+
+
+<script type="application/javascript">
+    var app = angular.module('ngApp', ['spicklist']);
+
+    app.controller('demoController', function ($scope) {
+
+        $scope.leftList = [];
+        $scope.rightList = [];
+
+        for (var i = 0; i < 5; i++) {
+            $scope.leftList.push("left" + i);
+            $scope.rightList.push("right" + i);
+        }
+    });
+
+</script>
+
+<body ng-app="ngApp">
+<div ng-controller="demoController" style="margin: 30px;">
+    <div style="width: 500px;">
+        <picklist left-list-rows="leftList" right-list-rows="rightList" list-width="150" list-height="200"
+                  show-move-all-buttons/>
+    </div>
+
+
+
+
+    <h2>additional information</h2>
+    <div class="row">
+        <div class="col-xs-6">left list
+            <ul>
+                <li ng-repeat="r in leftList track by $index" ng-class="{doesNotBelongHere:r.indexOf('right')!==-1}">
+                    {{r}}
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-xs-6">
+            right list
+            <ul>
+                <li ng-repeat="r in rightList track by $index" ng-class="{doesNotBelongHere:r.indexOf('left')!==-1}">
+                    {{r}}
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+
+
+</body>
+</html>

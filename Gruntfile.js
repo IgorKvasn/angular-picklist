@@ -146,7 +146,8 @@ module.exports = function (grunt) {
 
   // Build task.
   grunt.registerTask('build', [
-      'ngtemplates',
+    'clean',
+    'ngtemplates',
     'concat',
     'ngmin',
     'uglify',
