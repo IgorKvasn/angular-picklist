@@ -20,7 +20,7 @@ angular.module('apicklist', []).factory('_', function () {
       restrict: 'E',
       transclude: true,
       replace: true,
-      template: '../template/picklist.html',
+      templateUrl: '../template/picklist.html',
       scope: {
         leftListRowsModel: '=leftListRows',
         rightListRowsModel: '=rightListRows',
