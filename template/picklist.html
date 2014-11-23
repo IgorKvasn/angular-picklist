@@ -8,7 +8,7 @@
       <input placeholder="Search" type="text" class="form-control" ng-model="leftFilter"
              style="width: 75%;margin-bottom: 10px;"/>
       <select multiple ng-multiple="true" ng-model="leftSelected"
-              ng-options="r.data for r in leftListRows | filter:leftFilter"
+              ng-options="r.data for r in leftListRows | filter:{data:leftFilter}"
               style="overflow: auto;" ng-style="listCss"></select>
     </div>
 
@@ -35,7 +35,7 @@
              style="width: 75%;margin-bottom: 10px;"/>
 
       <select multiple="multiple" ng-model="rightSelected"
-              ng-options="r.data for r in rightListRows | filter:rightFilter"
+              ng-options="r.data for r in rightListRows | filter:{data:rightFilter}"
               style="overflow: auto;" ng-style="listCss"></select>
 
     </div>
