@@ -15,13 +15,19 @@ include CSS and Javascript:
 
  ```
  <link href="angular-picklist.min.css" rel="stylesheet"/>
-  <script src="angular-picklist.min.js"></script>
+ <script src="angular-picklist.min.js"></script>
   ```
 
 **Important note:** angular-picklist.min.js must be loaded **after** angular and lodash (and angular must be loaded before lodash...)
 
 ```
 <picklist left-list-rows="leftList" right-list-rows="rightList"/>
+```
+
+Load angular module *spicklist*, such as:
+
+```
+ var app = angular.module('ngApp', ['spicklist']);
 ```
 
 
@@ -36,3 +42,6 @@ Advanced usage with all the perks:
 ```
 <picklist left-list-rows="leftList" right-list-rows="rightList" list-width="150" list-height="200" show-move-all-buttons="false"/>
 ```
+
+##Example
+You may try a [sample Angular Picklist] (http://cdn.rawgit.com/IgorKvasn/angular-picklist/master/prodtest/test.html)

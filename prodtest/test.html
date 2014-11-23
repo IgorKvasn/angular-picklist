@@ -23,7 +23,11 @@
     <script src="https://cdn.rawgit.com/IgorKvasn/angular-picklist/master/dist/angular-picklist.min.js"></script>
 
 </head>
-
+<style>
+    .doesNotBelongHere{
+        font-weight: bold;
+    }
+</style>
 
 <script type="application/javascript">
     var app = angular.module('ngApp', ['spicklist']);
@@ -41,7 +45,7 @@
 
 </script>
 
-<body ng-app="ngApp">
+<body>
 <div ng-controller="demoController" style="margin: 30px;">
     <div style="width: 500px;">
         <picklist left-list-rows="leftList" right-list-rows="rightList" list-width="150" list-height="200"
@@ -51,7 +55,7 @@
 
 
 
-    <h2>additional information</h2>
+    <h2>-----How Angular model looks like----</h2>
     <div class="row">
         <div class="col-xs-6">left list
             <ul>
