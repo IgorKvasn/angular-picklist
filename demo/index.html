@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>
+<html class="lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html ng-app="ngApp" ng-cloak> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Directive Demo Page</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <link href="demo.css" rel="stylesheet"/>
+
+  <link href="../src/component.css" rel="stylesheet"/>
+  <link href="../public/components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet"/>
+  <link href="../public/components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body ng-controller="demoController" style="margin: 30px;">
+<div style="width: 500px;">
+  <picklist left-list-rows="leftList" right-list-rows="rightList" list-width="150" list-height="200" show-move-all-buttons/>
+</div>
+
+
+<div class="row">
+  <div class="col-xs-6">left list
+    <ul>
+      <li ng-repeat="r in leftList track by $index" ng-class="{doesNotBelongHere:r.indexOf('right')!==-1}">
+        {{r}}
+      </li>
+    </ul>
+  </div>
+
+  <div class="col-xs-6">
+    right list
+    <ul>
+      <li ng-repeat="r in rightList track by $index" ng-class="{doesNotBelongHere:r.indexOf('left')!==-1}">
+        {{r}}
+      </li>
+    </ul>
+  </div>
+</div>
+
+
+<script src="angular.js"></script>
+
+
+<script src="../public/components/lodash/dist/lodash.min.js"></script>
+<script src="../src/component.js"></script>
+
+
+<script src="main.js"></script>
+</body>
+</html>

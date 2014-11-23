@@ -1,0 +1,40 @@
+{
+  "author": {
+    "name": "Brian Park",
+    "email": "yaru22@gmail.com"
+  },
+
+  "name": "ng-component-seed",
+  "description": "Angular component (directive, filter, service, etc.) seed that is used to kickstart the implementation.",
+  "version": "0.2.0",
+  "license": "MIT",
+
+  "homepage": "https://github.com/yaru22/ng-component-seed",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/yaru22/ng-component-seed.git"
+  },
+
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "0.4.3",
+    "grunt-angular-templates": "0.5.3",
+    "grunt-contrib-clean": "0.5.0",
+    "grunt-contrib-concat": "0.3.0",
+    "grunt-contrib-connect": "0.7.1",
+    "grunt-contrib-copy": "0.5.0",
+    "grunt-contrib-cssmin": "0.9.0",
+    "grunt-contrib-jshint": "0.8.0",
+    "grunt-contrib-uglify": "0.4.0",
+    "grunt-contrib-watch": "0.5.3",
+    "grunt-ngmin": "0.0.3",
+    "grunt-open": "0.2.3",
+    "grunt-release": "0.7.0",
+    "matchdep": "0.3.0"
+  },
+
+  "scripts": {
+    "test": "grunt test"
+  }
+}
