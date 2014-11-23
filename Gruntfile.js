@@ -22,8 +22,8 @@ module.exports = function (grunt) {
       ' * <%= pkg.description %>\n' +
       ' * @version v<%= pkg.version %> - <%= grunt.template.today("yyyy-mm-dd") %>\n' +
       ' * @link <%= pkg.homepage %>\n' +
-      ' * @author <%= pkg.author.name %> <<%= pkg.author.email %>>\n' +
-      ' * @license MIT License, http://www.opensource.org/licenses/MIT\n' +
+      ' * @author <%= pkg.author.name %>\n' +
+      ' * @license CC BY 4.0 License,http://creativecommons.org/licenses/by/4.0/\n' +
       ' */\n'
     },
 
@@ -46,30 +46,14 @@ module.exports = function (grunt) {
         dest: '<%= dirs.dist %>/<%= pkg.name %>.css'
       }
     },
-
     connect: {  // grunt-contrib-connect
       dev: {
         options: {
           port: 9999,
           hostname: '0.0.0.0',
-          base: '<%= dirs.demo %>',
+          base: '<%= dirs.dist %>',
           keepalive: true
         }
-      }
-    },
-
-    copy: {
-      demo: {
-        files: [{
-          expand: true,
-          flatten: true,
-          src: [
-            '<%= dirs.dist %>/<%= pkg.name %>.js',
-            '<%= dirs.dist %>/<%= pkg.name %>.css'
-          ],
-          dest: '<%= dirs.demo %>/',
-          filter: 'isFile'
-        }]
       }
     },
 
@@ -84,8 +68,7 @@ module.exports = function (grunt) {
     jshint: {  // grunt-contrib-jshint
       all: [
         'Gruntfile.js',
-        '<%= dirs.src %>/**/*.js',
-        'test/unit/**/*.js'
+        '<%= dirs.src %>/**/*.js'
       ],
       options: {
         jshintrc: '.jshintrc'
@@ -139,22 +122,13 @@ module.exports = function (grunt) {
 
     uglify: {  // grunt-contrib-uglify
       options: {
-        banner: '<%= meta.banner %>'
+        banner: '<%= meta.banner %>',
+        mangle:true,
+        sourceMap: true
       },
       dist: {
         src: ['<%= dirs.dist %>/<%= pkg.name %>.js'],
         dest: '<%= dirs.dist %>/<%= pkg.name %>.min.js'
-      }
-    },
-
-    watch: {  // grunt-contrib-watch
-      src: {
-        files: [
-          '<%= dirs.src %>/*.js',
-          '<%= dirs.src %>/*.css',
-          '<%= dirs.tmpl %>/*.tmpl'
-        ],
-        tasks: ['test']
       }
     }
   });
@@ -173,29 +147,14 @@ module.exports = function (grunt) {
 
   // Test task.
   grunt.registerTask('test', [
-    'jshint:all',
-    'ngtemplates'
+    'jshint:all'
   ]);
 
   // Build task.
   grunt.registerTask('build', [
-    'test',
     'concat',
     'ngmin',
     'uglify',
-    'cssmin',
-    'copy'
+    'cssmin'
   ]);
-
-  // Run dev server.
-  grunt.registerTask('run', [
-    'open',
-    'connect'
-  ]);
-
-  // Shortcuts
-  grunt.registerTask('b', 'build');
-  grunt.registerTask('c', 'clean');
-  grunt.registerTask('s', 'run');
-  grunt.registerTask('t', 'test');
 };
