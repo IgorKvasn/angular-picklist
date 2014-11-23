@@ -44,4 +44,4 @@ Advanced usage with all the perks:
 ```
 
 ##Example
-You may try a [sample Angular Picklist] (http://cdn.rawgit.com/IgorKvasn/angular-picklist/master/prodtest/test.html)
+You may try a [sample Angular Picklist] (http://cdn.rawgit.com/IgorKvasn/angular-picklist/master/prodtest/test2.html)
