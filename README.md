@@ -44,4 +44,9 @@ Advanced usage with all the perks:
 ```
 
 ##Example
-You may try a [sample Angular Picklist] (http://cdn.rawgit.com/IgorKvasn/angular-picklist/master/prodtest/test.html)
+Download a HTML file from _prodtest/_ directory and open it in your favourite browser.
+
+
+Alternatively, you may try a [sample Angular Picklist] (http://cdn.rawgit.com/IgorKvasn/angular-picklist/master/prodtest/test2.html)
+
+__Note that example provided by this URL may contain some bugs that DOES NOT reflect the current state of the project... this is an unfortunate problem of _rawgit_ service, that is caching files indefinetly... Please consider the example as a simple showcase, NOT an actual demo. I am in no mood to fiddle with this anymore, maybe later...__
